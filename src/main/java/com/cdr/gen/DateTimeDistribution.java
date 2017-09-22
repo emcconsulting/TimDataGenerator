@@ -31,7 +31,7 @@ import org.supercsv.prefs.CsvPreference;
  */
 public class DateTimeDistribution {
     private static final Logger LOG = Logger.getLogger(DateTimeDistribution.class);
-    private static final String TIME_DIST_CSV = "/time_dist.csv";
+    private static final String TIME_DIST_CSV = "time_dist.csv";
     public static final String TYPE_WEEKDAY = "Weekday";
     public static final String TYPE_WEEKEND = "Weekend";
     

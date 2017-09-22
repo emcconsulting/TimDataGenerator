@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 import static java.lang.Math.*;
 
 import org.apache.log4j.Logger;
@@ -197,14 +198,33 @@ public class Population {
     }
     
     protected String getRandomGeoLatitude() {
-    Random r = new Random();
+    
+    	double radiusInDegrees = 300000 / 111000f;
+
+	    double u = random.nextDouble();
+	    double v = random.nextDouble();
+	    double w = radiusInDegrees * Math.sqrt(u);
+	    double t = 2 * Math.PI * v;
+	    double x = w * Math.cos(t);
+	    double y = w * Math.sin(t);
+
+	    // Adjust the x-coordinate for the shrinking of the east-west distances
+	    double new_x = x / Math.cos(Math.toRadians(78.7378));
+
+	    double foundLongitude = new_x + 19.8388;
+	    double foundLatitude = y + 78.7378;
+	    return (Double.toString(foundLongitude) + ","+ Double.toString(foundLatitude) );
+    	
+    	
+    	
+    	/*Random r = new Random();
     double u = r.nextDouble();
     double v = r.nextDouble();
 
     double latitude = Math.toDegrees(Math.acos(u*2-1)) - 90;
     double longitude = 360 * v - 180;
     
-    return (Double.toString(latitude) +","+ Double.toString(longitude));
+    return (Double.toString(latitude) +","+ Double.toString(longitude));*/
     }
     
     
@@ -270,7 +290,7 @@ public class Population {
             call.setCost(dateTimeDist.getCallCost(call));
             
             call.setGeo(getRandomGeoLatitude());
-            call.setGeo(getRandomGeoLatitude());
+            //call.setGeo(getRandomGeoLatitude());
             
             p.getCalls().add(call);
         }

@@ -24,7 +24,7 @@ import org.supercsv.prefs.CsvPreference;
  */
 public class PhoneNumberGenerator {
     private static final Logger LOG = Logger.getLogger(PhoneNumberGenerator.class);
-    private static final String PHONE_CODES_CSV = "/phone_codes.csv";
+    private static final String PHONE_CODES_CSV = "phone_codes.csv";
     public static final Map<String, List<String>> PHONE_CODES = new HashMap<String, List<String>>();
     
     static {
@@ -33,7 +33,7 @@ public class PhoneNumberGenerator {
             ICsvListReader listReader;
             
             if (JavaUtils.isJar()) {
-                InputStream is = PhoneNumberGenerator.class.getResourceAsStream(PHONE_CODES_CSV);
+                InputStream is = PhoneNumberGenerator.class.getClassLoader().getSystemResourceAsStream(PHONE_CODES_CSV);
                 listReader = new CsvListReader(
                         new StringReader(IOUtils.convertStreamToString(is)),
                         CsvPreference.EXCEL_NORTH_EUROPE_PREFERENCE);

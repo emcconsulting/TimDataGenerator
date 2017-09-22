@@ -7,9 +7,10 @@
         "mean": 250,
         "stdDev": 50
     },
-    "numAccounts": 200,
+    "numAccounts": 20000,
     "startDate": "01/01/2012",
     "endDate": "01/12/2017",
+    "timeDistCsv": "/root/timgenerator/time_dist.csv",
     "callTypes": ["Free", "Local", "National", "Intl", "PRS", "Mobile"],
     "dayDistribution": {
         "sun": 0.2222,
