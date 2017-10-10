@@ -11,6 +11,7 @@
     "startDate": "01/01/2012",
     "endDate": "01/12/2017",
     "callTypes": ["Listening to latest music","SMS","Bollywood videos","watching news updates","internet browsing","regional movies","email","live sports","ringtones/wallpaper","mms","mobile tv","playing online games","video calling","social networking","bank account details","medical advice from doctor","bill payments","booking tickets","banking transactions","video conferencing"],
+   "timeDistCsv": "/root/timgenerator/time_dist.csv",
     "dayDistribution": {
         "sun": 0.2222,
         "mon": 0.1111,

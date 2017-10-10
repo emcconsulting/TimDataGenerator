@@ -24,7 +24,7 @@ import org.json.simple.parser.ParseException;
  */
 public final class CDRGen {
     private static final Logger LOG = Logger.getLogger(CDRGen.class);
-    private static final String DEFAULT_CONFIG_FILE = "/config.json";
+    private static final String DEFAULT_CONFIG_FILE = "/config_vas.json";
     private Map<String, Object> config;
     
     public CDRGen() {
